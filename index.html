@@ -6,9 +6,9 @@
     <title>Input</title>
 </head>
 <body>
-    <div>
-        <input type="text" v-model/>
-        <h2>input</h2>
+    <div id="app">
+        <input type="text" v-model= "title" />
+        {{title}}
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -19,9 +19,22 @@
         return value.charAt(0).toUpperCase() + value.slice(1)
       })
       
-      new Vue({
-        // ...
-      })
+     
+
+      var app = new Vue({
+          el: "#app",
+          data:{ 
+
+          }  
+      });
+
+      filters: {
+  capitalize: function (value) {
+    if (!value) return ''
+    value = value.toString()
+    return value.charAt(0).toUpperCase() + value.slice(1)
+  }
+}
 
     </script>
     
